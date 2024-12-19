@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <div class="match-info">
+            <div class="match-count">Match #1</div>
+            <div class="current-turn">
+                <img src="" alt="Current Turn" id="turn-indicator" class="turn-icon">
+                <span id="turn-text">Waiting for opponent...</span>
+            </div>
+        </div>
+
+        <div class="player-info" id="player1-info">
+            <div class="avatar-container">
+                <img src="/static/images/x.png" alt="Player 1" id="player1-avatar">
+            </div>
+            <div class="player-text">
+                <span id="player1-name" class="player-name"></span>
+                <div class="score" id="player1-score">Wins: 0</div>
+                <div class="last-match" id="player1-last">Last match: -</div>
+            </div>
+        </div>
+
+        <div class="game-board" id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+
+        <div class="player-info" id="player2-info">
+            <div class="avatar-container">
+                <img src="/static/images/o.png" alt="Player 2" id="player2-avatar">
+            </div>
+            <div class="player-text">
+                <span id="player2-name" class="player-name"></span>
+                <div class="score" id="player2-score">Wins: 0</div>
+                <div class="last-match" id="player2-last">Last match: -</div>
+            </div>
+        </div>
+
+        <div class="game-status" id="status">Waiting for opponent...</div>
+
+        <div class="action-buttons">
+            <button id="rematch-btn" style="display: none;" onclick="requestRematch()">Request Rematch</button>
+            <button id="accept-rematch-btn" style="display: none;" onclick="acceptRematch()">Accept Rematch</button>
+            <button id="decline-rematch-btn" style="display: none;" onclick="declineRematch()">Decline Rematch</button>
+            <button id="end-game-btn" onclick="endGame()">End Game</button>
+        </div>
+    </div>
+
+    <script src="/static/game.js"></script>
+</body>
+</html>

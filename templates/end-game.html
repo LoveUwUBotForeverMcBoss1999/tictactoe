@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Ended - Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="end-game-container">
+        <h1>Game Summary</h1>
+        <div class="final-stats">
+            <div class="player-final-stats" id="player1-final">
+                <div class="avatar-container">
+                    <img src="/static/images/x.png" alt="Player 1" id="final-p1-avatar">
+                </div>
+                <div class="player-text">
+                    <span id="final-p1-name" class="player-name"></span>
+                    <div id="final-p1-score"></div>
+                </div>
+            </div>
+
+            <div class="stats-summary">
+                <h2>Match Statistics</h2>
+                <div id="total-matches"></div>
+                <div id="total-draws"></div>
+                <div id="last-winner"></div>
+            </div>
+
+            <div class="player-final-stats" id="player2-final">
+                <div class="avatar-container">
+                    <img src="/static/images/o.png" alt="Player 2" id="final-p2-avatar">
+                </div>
+                <div class="player-text">
+                    <span id="final-p2-name" class="player-name"></span>
+                    <div id="final-p2-score"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="final-actions">
+            <button onclick="downloadFinalStats()">Download Stats</button>
+            <button onclick="goHome()" class="home-btn">Return Home</button>
+        </div>
+    </div>
+
+    <script src="/static/end-game.js"></script>
+</body>
+</html>
